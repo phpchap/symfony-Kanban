@@ -1,0 +1,65 @@
+# each task is broken down into phases 
+Phase:
+  actAs:
+    Timestampable:
+    Sluggable:
+      fields: [slug]
+  connection: doctrine
+  tableName: phase
+  columns:
+    id:
+      type: integer(8)
+      primary: true
+      autoincrement: true
+    name:
+      type: string(100)
+    description:
+      type: text
+    slug:
+      type: string(100)
+
+# the smallest unit of work
+Task:
+  actAs:
+    Timestampable:
+    Sluggable:
+      fields: [slug]
+  connection: doctrine
+  tableName: task
+  columns:
+    name:
+      type: string(100)
+    description:
+      type: text
+    slug:
+      type: string(100)
+    task_color:
+      type: string(100)
+    estimated_mins_to_complete:
+      type: integer(8)
+    actual_mins_to_complete:
+      type: timestamp
+    phase_id:
+      type: integer(8)
+    department_id:
+      type: integer(8)
+  relations:
+    Phase:
+      foreignAlias: Tasks
+    Department:
+      foreignAlias: Departments
+
+# who is responsible for the task
+Department:
+  actAs: [Timestampable]
+  connection: doctrine
+  tableName: department
+  columns:
+    name:
+     type: string(100)
+    description:
+      type: text
+    short_name:
+     type: string(100)
+    task_color:
+     type: string(100)

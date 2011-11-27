@@ -1,0 +1,45 @@
+
+# Live
+live:
+  doctrine:
+    class: sfDoctrineDatabase
+    param:
+      dsn: 'mysql:host=localhost;dbname=kanban_live'
+      username: root
+      password: root
+      # You need these for non-latin character sets and full I18N
+      encoding: utf8
+      attributes:
+        DEFAULT_TABLE_TYPE: INNODB
+        DEFAULT_TABLE_CHARSET: utf8
+        DEFAULT_TABLE_COLLATE: utf8_general_ci
+
+# Stage
+stage:
+  doctrine:
+    class: sfDoctrineDatabase
+    param:
+      dsn: 'mysql:host=localhost;dbname=kanban_stage'
+      username: root
+      password: root
+      # You need these for non-latin character sets and full I18N
+      encoding: utf8
+      attributes:
+        DEFAULT_TABLE_TYPE: INNODB
+        DEFAULT_TABLE_CHARSET: utf8
+        DEFAULT_TABLE_COLLATE: utf8_general_ci
+
+# Dev
+dev:
+  doctrine:
+    class: sfDoctrineDatabase
+    param:
+      dsn: 'mysql:host=localhost;dbname=kanban_dev'
+      username: root
+      password: root
+      # You need these for non-latin character sets and full I18N
+      encoding: utf8
+      attributes:
+        DEFAULT_TABLE_TYPE: INNODB
+        DEFAULT_TABLE_CHARSET: utf8
+        DEFAULT_TABLE_COLLATE: utf8_general_ci

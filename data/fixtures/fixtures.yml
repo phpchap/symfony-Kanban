@@ -1,0 +1,115 @@
+Phase:
+  one:
+    name: Backlog
+    description: Stories that will be worked on some day
+    slug: phase-one
+  two:    
+    name: Ready
+    description: Stories that are ready to be worked on
+    slug: phase-two
+  three:
+    name: In Progress
+    description: Stories that are currently being worked on
+    slug: phase-three
+  four:
+    name: Complete
+    description: Stories that have been completed and ready to be tested
+    slug: phase-four
+  five:
+    name: Archived
+    description: Stories that have been completed
+    slug: phase-five
+
+Task:
+  one:
+    name: 'User Login'
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque in erat quis erat convallis molestie. Aenean aliquam, lectus eu tempus euismod, felis tellus pellentesque dolor, sed eleifend leo ligula nec lacus. Fusce est magna, iaculis sit amet rhoncus sit amet, vulputate elementum nibh. Maecenas luctus porta tortor, eu sollicitudin purus luctus id. Mauris sit amet nulla id metus scelerisque molestie in a diam. Nulla a quam ipsum. Curabitur lacus tortor, accumsan sit amet euismod sit amet, dapibus non nunc. Aliquam placerat blandit quam, vitae mollis ante sodales eget.'
+    slug: 'user-login'
+    phase_id: 1
+    department_id: 1
+    estimated_mins_to_complete: 180
+  two:
+    name: 'User Registration'
+    description: 'Sed volutpat risus a sem dapibus nec blandit neque molestie. Nunc tellus arcu, dictum sed malesuada varius, cursus id augue. Nulla facilisi. Nullam arcu urna, scelerisque in dapibus quis, elementum eu lectus. Pellentesque nec odio turpis. Maecenas sit amet facilisis dolor. Nullam quis tristique ligula. Quisque fringilla aliquam faucibus. Sed consequat ligula ac lacus iaculis vel convallis tortor vehicula. Aliquam porta, tellus non fringilla aliquam, dui mi facilisis metus, in mollis ipsum ante a ligula. Proin viverra dictum diam, in aliquet ligula imperdiet sit amet. Nunc nec elit ac lorem pellentesque volutpat. Phasellus vitae nisi vel ante luctus ultrices. Etiam pulvinar augue id ante vestibulum eget volutpat arcu interdum. Pellentesque malesuada fringilla felis. '
+    slug: 'user-registration'
+    phase_id: 1
+    department_id: 2
+    estimated_mins_to_complete: 60
+  three:
+    name: 'User Password Reset'
+    description: 'Nunc ut tincidunt nibh. Donec elementum dapibus est et aliquet. Integer est metus, bibendum non ullamcorper at, feugiat non leo. Ut mauris dolor, luctus vel suscipit id, fringilla pretium quam. Vestibulum lorem enim, ultrices sollicitudin interdum sit amet, euismod malesuada ligula. Curabitur ac mauris sem, sit amet mollis tellus. Ut iaculis eleifend erat, quis vulputate magna convallis id. Morbi magna ante, pretium et lacinia et, pretium a dui. Suspendisse rutrum leo et lorem facilisis eu dapibus magna lobortis. '
+    slug: 'user-password-reset'
+    phase_id: 2
+    department_id: 2
+    estimated_mins_to_complete: 240
+  four:
+    name: 'Fund Registration'
+    description: 'Morbi in augue elit. Suspendisse ipsum elit, feugiat vitae commodo vitae, luctus eget nulla. Curabitur vulputate arcu id nisl tincidunt vitae mollis dui bibendum. Aenean nisi neque, rhoncus ac euismod at, varius sed urna. Morbi eu ipsum at dui condimentum vulputate non elementum orci. Vestibulum non suscipit eros. Suspendisse ut rhoncus ante. Phasellus vitae sem mi, a vulputate erat. Nullam in velit at elit convallis pellentesque quis id velit. '
+    slug: 'fund-registration'
+    phase_id: 3
+    department_id: 2
+    estimated_mins_to_complete: 60
+  five:
+    name: 'Fund Donation'
+    description: 'Aenean ultrices laoreet tortor, a molestie quam rhoncus a. Duis a nunc est, et ultricies mauris. Ut cursus urna volutpat quam vehicula consequat. Curabitur porttitor risus non elit dapibus ullamcorper. Donec ullamcorper massa ac massa mollis vel tristique sem sollicitudin. Cras hendrerit purus in leo ornare sagittis. Vestibulum dignissim tempor sodales. Duis euismod rutrum porta. Suspendisse consectetur, turpis ac pharetra facilisis, erat urna tempus tortor, eu laoreet erat magna eu urna. Donec dictum vestibulum dolor. Pellentesque et neque leo, at posuere metus. Sed ut dui ac libero faucibus aliquet. '
+    slug: 'fund-donation'
+    phase_id: 3
+    department_id: 1
+    estimated_mins_to_complete: 120
+  six:
+    name: 'Sub Fund Registration'
+    description:
+    slug: 'sub-fund-registration'
+    phase_id: 4
+    department_id: 1
+    estimated_mins_to_complete: 180
+  seven:
+    name: 'Single Donation'
+    description: 'Duis viverra libero in erat sagittis sodales hendrerit neque tristique. Nunc elit elit, fermentum in varius quis, tincidunt at tellus. Pellentesque diam urna, condimentum quis fermentum vitae, tincidunt ut lorem. Nam ac rhoncus odio. Duis sodales mi sem. Phasellus eget sagittis tortor. Mauris lobortis luctus iaculis. Nullam nisi nulla, congue sit amet facilisis eget, rutrum sed sem. Praesent ac justo sit amet lorem congue posuere at nec tellus. Sed dignissim velit eget nisi ornare fringilla. Integer bibendum nisi a libero euismod semper. Vivamus condimentum tincidunt nunc in condimentum. Sed eu erat sed massa pharetra pharetra at non mauris. Curabitur pretium nisl nec augue ultrices mattis. '
+    slug: 'single-donation'
+    phase_id: 5
+    department_id: 1
+    estimated_mins_to_complete: 60
+    actual_mins_to_complete: 180
+  eight:
+    name: 'Payment Gateway Contract'
+    description: 'Duis viverra libero in erat sagittis sodales hendrerit neque tristique. Nunc elit elit, fermentum in varius quis, tincidunt at tellus. Pellentesque diam urna, condimentum quis fermentum vitae, tincidunt ut lorem. Nam ac rhoncus odio. Duis sodales mi sem. Phasellus eget sagittis tortor. Mauris lobortis luctus iaculis. Nullam nisi nulla, congue sit amet facilisis eget, rutrum sed sem. Praesent ac justo sit amet lorem congue posuere at nec tellus. Sed dignissim velit eget nisi ornare fringilla. Integer bibendum nisi a libero euismod semper. Vivamus condimentum tincidunt nunc in condimentum. Sed eu erat sed massa pharetra pharetra at non mauris. Curabitur pretium nisl nec augue ultrices mattis. '
+    slug: 'payment-gateway-contract'
+    phase_id: 2
+    department_id: 3
+    estimated_mins_to_complete: 60
+  nine:
+    name: 'Server Contract'
+    description: 'Duis viverra libero in erat sagittis sodales hendrerit neque tristique. Nunc elit elit, fermentum in varius quis, tincidunt at tellus. Pellentesque diam urna, condimentum quis fermentum vitae, tincidunt ut lorem. Nam ac rhoncus odio. Duis sodales mi sem. Phasellus eget sagittis tortor. Mauris lobortis luctus iaculis. Nullam nisi nulla, congue sit amet facilisis eget, rutrum sed sem. Praesent ac justo sit amet lorem congue posuere at nec tellus. Sed dignissim velit eget nisi ornare fringilla. Integer bibendum nisi a libero euismod semper. Vivamus condimentum tincidunt nunc in condimentum. Sed eu erat sed massa pharetra pharetra at non mauris. Curabitur pretium nisl nec augue ultrices mattis. '
+    slug: 'server-contract'
+    phase_id: 3
+    department_id: 5
+    estimated_mins_to_complete: 60
+    
+
+Department:
+  one:
+    name: 'Programming Team'
+    description: 'PHP Programmers'
+    short_name: 'Prog'
+    task_color: 'FFFF00'
+  two:
+    name: 'Design Team'
+    description: 'Front End Designers'
+    short_name: 'Des'
+    task_color: 'FFFF00'
+  three:
+    name: 'Project Management Team'
+    description: 'Front End Designers'
+    short_name: 'Proj'
+    task_color: 'FFFF00'
+  four:
+    name: 'Client'
+    description: 'External Clients'
+    short_name: 'client'
+    task_color: 'FFFF00'
+  five:
+    name: 'Senior Management'
+    description: 'Upper Echelon'
+    short_name: 'Sen Man'
+    task_color: 'FFFF00'
