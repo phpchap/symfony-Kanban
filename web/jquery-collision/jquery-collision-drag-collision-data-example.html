@@ -11,21 +11,18 @@
     <style>
       * { margin: 0; padding: 0; border: 0; }
       body, h2, h3, #board { position: relative; }
-      #player    { width: 100px; height: 100px;
-                   background-color: rgba( 0, 0, 255, 0.5 );
-                   filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#880000FF, endColorstr=#880000FF);
-                 }
+      #player { width: 100px; height: 100px; background-color: rgba( 0, 0, 255, 0.5 ); filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#880000FF, endColorstr=#880000FF); }
       .obstacle  { background-color: #ff0000; }
       #Obstacle1 { width: 120px; height: 120px; }
       #Obstacle2 { width:  80px; height:  80px; }
       .wireframe { width: 100px; height: 100px; border: 1px solid black; margin: -1px; }
       .overlap   { background-color: #00ffff; position: relative; }
-			#main      {}
+	  #main      {}
       #board     { width: 400px; height: 250px; background-color: #888888; }
-			#board, #list { float: left; clear: none; }
-			#player, .obstacle { position: absolute; }
-			#col1, #col2, #col3 { width: 100px; }
-			#col1, #col3 { background-color: #EEEEEE; }
+	  #board, #list { float: left; clear: none; }
+	  #player, .obstacle { position: absolute; }
+	  #col1, #col2, #col3 { width: 100px; }
+	  #col1, #col3 { background-color: #EEEEEE; }
     </style>
     <script>
       function showOverlap(event, ui)
@@ -38,37 +35,100 @@
 			colliderData: "cdata",
 			directionData: "ddata", as: "<div/>" } );
 
-				for( var i=0; i<collisions.length; i++ )
-				{
+			for( var i=0; i<collisions.length; i++ )
+			{
+			  var o = $(collisions[i]).data("odata");
+			  var c = $(collisions[i]).data("cdata");
+			  var d = $(collisions[i]).data("ddata");
+			  var collider_id = $(o).get(0).id;				  
+			  var cside = d;
+			  
+			  console.log('height: ' + $(collisions[i]).height());
 
-				  var o = $(collisions[i]).data("odata");
-				  var c = $(collisions[i]).data("cdata");
-				  var d = $(collisions[i]).data("ddata");
-				  var cwith = $(o).get(0).id;				  
-				  var cside = d;
-  
-switch(cside) {
-  // top
-  case 'N': console.log('top - push bottom'); break;
-  // bottom right
-  case 'NE': console.log('bottom left - push top'); break;
-  // right
-  case 'E': console.log('right - figure out position'); break;
-  // top right
-  case 'SE': console.log('top left - push down'); break;
-  // bottom
-  case 'S': console.log('bottom - push up'); break;
-  // top left
-  case 'SW': console.log('top right - push down'); break;
-  // left
-  case 'W': console.log('left - figure out position'); break;
-  // bottom left
-  case 'NW': console.log('bottom right - push up'); break;
-}
+			  // this is the difference in height for the collision
+			  var collision_height = $(collisions[i]).height();
+			  var current_collider_top = $("#" + collider_id).height();
+			  var collider_top = parseInt($("#" + collider_id).css('top').replace("px", ""));
+
+console.log('collider_top: ' + collider_top);
+
+// -------
+// CSS TOP
+// -------
+// - (to go up)
+// + (to go down)
+// -------
+
+			  switch(cside) {
+				// top
+				case 'N':
+				  var adjustment_height = collider_top + collision_height;
+				  console.log('top - push bottom: ' + collider_id + ' adjustment_height: ' + adjustment_height);
+				  $("#" + collider_id).css('top', adjustment_height);
+//console.log( 'collided top ' + $("#" + collider_id).css('top', adjustment_height) );
+				break;
+			  
+				// bottom right
+				case 'NE':
+				  var adjustment_height = collider_top - collision_height;
+				  console.log('bottom left - push top: ' + collider_id + ' adjustment_height: ' + adjustment_height);				  
+				  $("#" + collider_id).css('top', adjustment_height);
+//console.log( 'collided top ' + $("#" + collider_id).css('top', adjustment_height) );
+				break;
+			  
+				// right
+				case 'E':
+				  var adjustment_height = collider_top - collision_height;
+				  console.log('right - figure out position: ' + collider_id + ' adjustment_height: ' + adjustment_height);
+				  $("#" + collider_id).css('top', adjustment_height);
+//console.log( 'collided top ' + $("#" + collider_id).css('top', adjustment_height) );
+				break;
+			  
+				// top right
+				case 'SE':
+				  var adjustment_height = collider_top + collision_height;
+				  console.log('top left - push down: ' + collider_id + ' adjustment_height: ' + adjustment_height);
+				  $("#" + collider_id).css('top', adjustment_height);
+//console.log( 'collided top ' + $("#" + collider_id).css('top', adjustment_height) );
+				break;
+			  
+				// bottom
+				case 'S':
+				  var adjustment_height = collider_top - collision_height;
+				  console.log('bottom - push up: ' + collider_id + ' adjustment_height: ' + adjustment_height);
+				  $("#" + collider_id).css('top', adjustment_height);
+//console.log( 'collided top ' + $("#" + collider_id).css('top', adjustment_height) );
+				break;
+			  
+				// top left
+				case 'SW':
+				  var adjustment_height = collider_top + collision_height;
+				  console.log('top right - push down: ' + collider_id + ' adjustment_height : ' + adjustment_height);
+				  $("#" + collider_id).css('top', adjustment_height);
+//console.log( 'collided top ' + $("#" + collider_id).css('top', adjustment_height) );
+				break;
+			  
+				// left
+				case 'W':
+				  var adjustment_height = collider_top - collision_height;
+				  console.log('left - figure out position: ' + collider_id + ' adjustment_height: ' + adjustment_height);
+				  $("#" + collider_id).css('top', adjustment_height);
+//console.log( 'collided top ' + $("#" + collider_id).css('top', adjustment_height) );
+				break;
+			  
+				// bottom left
+				case 'NW':
+				  var adjustment_height = collider_top - collision_height;
+				  console.log('bottom right - push down: ' + collider_id + ' adjustment_height: ' + adjustment_height);				  
+				  $("#" + collider_id).css('top', adjustment_height);
+				   
+//console.log( 'collided top ' + $("#" + collider_id).css('top') );
+				break;
+			  }
 
 // $("#" + cwith).css('top', $(collisions[i]).height());
-
 /*
+
 				  var snap  = $(c).clone(false,false).removeClass().addClass("wireframe");
 
 				  snap.get(0).id = null;
@@ -78,7 +138,7 @@ switch(cside) {
 				  var olap  = $(collisions[i]).addClass("overlap").appendTo(snap);
 				  var tr    = $("<tr />");
 
-				  $("<td>"+cwith+"</td>").appendTo(tr);
+				  $("<td>"+collider_id+"</td>").appendTo(tr);
 				  $("<td>"+cside+"</td>").appendTo(tr);
 				  snap.appendTo($("<td />")).appendTo(tr);
 				  tr.appendTo( $("#collisions") );
