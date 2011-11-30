@@ -29,7 +29,7 @@
       {
 	      $("#collisions").children().remove();
 
-		  var collisions = $("#player").collision( ".obstacle", {
+		  var collisions = $(".obstacle").collision( ".obstacle", {
 			relative: "collider",
 			obstacleData: "odata",
 			colliderData: "cdata",
@@ -160,7 +160,7 @@ console.log('collider_top: ' + collider_top);
       <div id="board">
         <div class="draggable ui-widget-content obstacle" style="left:  0px; top:  0px;" id="Obstacle1">Obstacle1</div>
         <div class="draggable ui-widget-content obstacle" style="left:120px; top:120px;" id="Obstacle2">Obstacle2</div>
-        <div class="draggable ui-widget-content" style="left:240px; top: 20px;" id="player" >Player</div>
+        <div class="draggable ui-widget-content obstacle" style="left:240px; top: 20px;" id="player" >Player</div>
       </div>
 	  <div id="list">
 		<table id="table">

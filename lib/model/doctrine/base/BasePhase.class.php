@@ -34,11 +34,11 @@ abstract class BasePhase extends sfDoctrineRecord
     public function setTableDefinition()
     {
         $this->setTableName('phase');
-        $this->hasColumn('id', 'integer', 8, array(
+        $this->hasColumn('id', 'integer', 4, array(
              'type' => 'integer',
              'primary' => true,
              'autoincrement' => true,
-             'length' => 8,
+             'length' => 4,
              ));
         $this->hasColumn('name', 'string', 100, array(
              'type' => 'string',

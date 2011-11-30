@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <script src="http://test.clubmelia.com/labs/collide/jquery-1.5.1.js"></script>
+    <script src="http://test.clubmelia.com/labs/collide/ui/jquery.ui.core.js"></script>
+    <script src="http://test.clubmelia.com/labs/collide/ui/jquery.ui.widget.js"></script>
+    <script src="http://test.clubmelia.com/labs/collide/ui/jquery.ui.mouse.js"></script>
+    <script src="http://test.clubmelia.com/labs/collide/ui/jquery.ui.draggable.js"></script>
+    <script src="http://test.clubmelia.com/labs/collide/jquery-collision-1.0.1.js"></script>
+    <script src="http://test.clubmelia.com/labs/collide/jquery-ui-draggable-collision-1.0.1.js"></script>
+    <style>
+      .draggable { width: 100px; height: 100px; margin: 0; position: absolute; background-color: #0000ff; }
+      .obstacle  { width: 100px; height: 100px; margin: 0; position: absolute; background-color: #ff0000; }
+      .restraint { width: 340px; height: 550px; margin: 0; position: absolute; background-color: #00ff00; }
+      #board { width: 400px; height: 600px; background-color: #888888; border: 0; border-collapse: collapse; margin: 0; position: absolute; }
+      body { margin: 0px; padding: 0px; }
+    </style>
+    <script>
+      $(function() {
+
+		// started drag
+		function callBackStart( obj ) {
+			console.log('STARTED DRAG: ' + obj.id );
+            $(obj).removeClass("obstacle").addClass("ui-widget-content");
+		}
+
+		// end drag
+		function callBackStop( obj ) {
+			console.log('STOP DRAG: ' + obj.id );
+            $(obj).removeClass("ui-widget-content").addClass("obstacle");
+		}
+
+        $( ".draggable" ).draggable({
+			start: function() {				
+				callBackStart( this );
+			}, 
+			stop: function() {				
+				callBackStop( this );
+			},
+            containment: "#board",
+            obstacle: ".obstacle",
+            preventCollision: true,
+            collisionVisualDebug: true,
+            restraint: ".restraint",
+            preventProtrusion: true });
+      });
+    </script>
+  </head>
+  <body>
+    <h2>Drag blue block within green restraint and around red obstacles.</h2>
+    <div id="board">
+      <div class="restraint"                   style="left: 30px; top: 25px;">1</div>
+      <div class="draggable obstacle" style="left:100px; top: 50px;" id="b" >2</div>
+      <div class="draggable obstacle" style="left:280px; top:  0px;" id="b" >3</div>
+      <div class="draggable obstacle"                    style="left: 25px; top:115px;" id="a" >4</div>
+      <div class="draggable obstacle"                    style="left:185px; top:160px;width:125px;height:125px;" id="c" >5</div>
+    </div>
+  </body>
+</html>

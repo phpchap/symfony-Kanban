@@ -8,7 +8,7 @@ Phase:
   tableName: phase
   columns:
     id:
-      type: integer(8)
+      type: integer(4)
       primary: true
       autoincrement: true
     name:
@@ -27,6 +27,10 @@ Task:
   connection: doctrine
   tableName: task
   columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
     name:
       type: string(100)
     description:
@@ -40,21 +44,28 @@ Task:
     actual_mins_to_complete:
       type: timestamp
     phase_id:
-      type: integer(8)
+      type: integer(4)
     department_id:
-      type: integer(8)
+      type: integer(4)
   relations:
     Phase:
       foreignAlias: Tasks
     Department:
       foreignAlias: Departments
-
+  attributes:
+    export: all
+    validate: true
+  
 # who is responsible for the task
 Department:
   actAs: [Timestampable]
   connection: doctrine
   tableName: department
   columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
     name:
      type: string(100)
     description:
@@ -63,3 +74,26 @@ Department:
      type: string(100)
     task_color:
      type: string(100)
+  relations:
+    Tasks:
+      foreignAlias: Departments
+      class: Task
+      refClass: TaskDepartment
+
+TaskDepartment:
+  actAs:
+    Timestampable:
+  connection: doctrine
+  tableName: task_department
+  columns:
+    task_id:
+      type: integer(4)
+      primary: true    
+    department_id:
+      type: integer(4)
+      primary: true    
+  relations:
+    Task:
+      foreignAlias: TaskDepartments
+    Department:
+      foreignAlias: TaskDepartments

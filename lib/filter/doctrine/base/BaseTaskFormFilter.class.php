@@ -23,6 +23,7 @@ abstract class BaseTaskFormFilter extends BaseFormFilterDoctrine
       'department_id'              => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Department'), 'add_empty' => true)),
       'created_at'                 => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => false)),
       'updated_at'                 => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => false)),
+      'departments_list'           => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'Department')),
     ));
 
     $this->setValidators(array(
@@ -36,6 +37,7 @@ abstract class BaseTaskFormFilter extends BaseFormFilterDoctrine
       'department_id'              => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Department'), 'column' => 'id')),
       'created_at'                 => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 00:00:00')), 'to_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 23:59:59')))),
       'updated_at'                 => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 00:00:00')), 'to_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 23:59:59')))),
+      'departments_list'           => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'Department', 'required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('task_filters[%s]');
@@ -45,6 +47,24 @@ abstract class BaseTaskFormFilter extends BaseFormFilterDoctrine
     $this->setupInheritance();
 
     parent::setup();
+  }
+
+  public function addDepartmentsListColumnQuery(Doctrine_Query $query, $field, $values)
+  {
+    if (!is_array($values))
+    {
+      $values = array($values);
+    }
+
+    if (!count($values))
+    {
+      return;
+    }
+
+    $query
+      ->leftJoin($query->getRootAlias().'.TaskDepartment TaskDepartment')
+      ->andWhereIn('TaskDepartment.department_id', $values)
+    ;
   }
 
   public function getModelName()
@@ -66,6 +86,7 @@ abstract class BaseTaskFormFilter extends BaseFormFilterDoctrine
       'department_id'              => 'ForeignKey',
       'created_at'                 => 'Date',
       'updated_at'                 => 'Date',
+      'departments_list'           => 'ManyKey',
     );
   }
 }

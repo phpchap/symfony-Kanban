@@ -1,3 +1,30 @@
+Department:
+  one:
+    name: 'Programming Team'
+    description: 'PHP Programmers'
+    short_name: 'Prog'
+    task_color: 'FFFF00'
+  two:
+    name: 'Design Team'
+    description: 'Front End Designers'
+    short_name: 'Des'
+    task_color: 'FFFF00'
+  three:
+    name: 'Project Management Team'
+    description: 'Front End Designers'
+    short_name: 'Proj'
+    task_color: 'FFFF00'
+  four:
+    name: 'Client'
+    description: 'External Clients'
+    short_name: 'client'
+    task_color: 'FFFF00'
+  five:
+    name: 'Senior Management'
+    description: 'Upper Echelon'
+    short_name: 'Sen Man'
+    task_color: 'FFFF00'
+
 Phase:
   one:
     name: Backlog
@@ -85,31 +112,3 @@ Task:
     phase_id: 3
     department_id: 5
     estimated_mins_to_complete: 60
-    
-
-Department:
-  one:
-    name: 'Programming Team'
-    description: 'PHP Programmers'
-    short_name: 'Prog'
-    task_color: 'FFFF00'
-  two:
-    name: 'Design Team'
-    description: 'Front End Designers'
-    short_name: 'Des'
-    task_color: 'FFFF00'
-  three:
-    name: 'Project Management Team'
-    description: 'Front End Designers'
-    short_name: 'Proj'
-    task_color: 'FFFF00'
-  four:
-    name: 'Client'
-    description: 'External Clients'
-    short_name: 'client'
-    task_color: 'FFFF00'
-  five:
-    name: 'Senior Management'
-    description: 'Upper Echelon'
-    short_name: 'Sen Man'
-    task_color: 'FFFF00'

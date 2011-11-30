@@ -26,6 +26,7 @@ abstract class BaseTaskForm extends BaseFormDoctrine
       'department_id'              => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Department'), 'add_empty' => true)),
       'created_at'                 => new sfWidgetFormDateTime(),
       'updated_at'                 => new sfWidgetFormDateTime(),
+      'departments_list'           => new sfWidgetFormDoctrineChoice(array('multiple' => true, 'model' => 'Department')),
     ));
 
     $this->setValidators(array(
@@ -40,6 +41,7 @@ abstract class BaseTaskForm extends BaseFormDoctrine
       'department_id'              => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Department'), 'required' => false)),
       'created_at'                 => new sfValidatorDateTime(),
       'updated_at'                 => new sfValidatorDateTime(),
+      'departments_list'           => new sfValidatorDoctrineChoice(array('multiple' => true, 'model' => 'Department', 'required' => false)),
     ));
 
     $this->validatorSchema->setPostValidator(
@@ -58,6 +60,62 @@ abstract class BaseTaskForm extends BaseFormDoctrine
   public function getModelName()
   {
     return 'Task';
+  }
+
+  public function updateDefaultsFromObject()
+  {
+    parent::updateDefaultsFromObject();
+
+    if (isset($this->widgetSchema['departments_list']))
+    {
+      $this->setDefault('departments_list', $this->object->Departments->getPrimaryKeys());
+    }
+
+  }
+
+  protected function doSave($con = null)
+  {
+    $this->saveDepartmentsList($con);
+
+    parent::doSave($con);
+  }
+
+  public function saveDepartmentsList($con = null)
+  {
+    if (!$this->isValid())
+    {
+      throw $this->getErrorSchema();
+    }
+
+    if (!isset($this->widgetSchema['departments_list']))
+    {
+      // somebody has unset this widget
+      return;
+    }
+
+    if (null === $con)
+    {
+      $con = $this->getConnection();
+    }
+
+    $existing = $this->object->Departments->getPrimaryKeys();
+    $values = $this->getValue('departments_list');
+    if (!is_array($values))
+    {
+      $values = array();
+    }
+
+    $unlink = array_diff($existing, $values);
+    if (count($unlink))
+    {
+      $this->object->unlink('Departments', array_values($unlink));
+    }
+
+    $link = array_diff($values, $existing);
+    if (count($link))
+    {
+      $this->object->link('Departments', array_values($link));
+    }
   }
 
 }
