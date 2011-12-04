@@ -6110,3 +6110,366 @@ Nov 30 22:28:37 symfony [info] {sfWebDebugLogger} Action "board/index" 53.10 ms 
 Nov 30 22:28:37 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.05 ms (17)
 Nov 30 22:28:37 symfony [info] {sfWebDebugLogger} View "Success" for "board/index" 84.25 ms (1)
 Nov 30 22:28:37 symfony [info] {sfWebResponse} Send content (76535 o)
+Dec 04 19:52:54 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'board',  'action' => 'index',)
+Dec 04 19:52:54 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Dec 04 19:52:54 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Dec 04 19:52:54 symfony [info] {boardActions} Call "boardActions->executeIndex()"
+Dec 04 19:52:54 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'utf8' - ()
+Dec 04 19:52:54 symfony [info] {Doctrine_Connection_Mysql} query : SELECT p.id AS p__id, p.name AS p__name, p.description AS p__description, p.slug AS p__slug, p.created_at AS p__created_at, p.updated_at AS p__updated_at FROM phase p - ()
+Dec 04 19:52:55 symfony [info] {Doctrine_Connection_Mysql} query : SELECT t.id AS t__id, t.name AS t__name, t.description AS t__description, t.slug AS t__slug, t.task_color AS t__task_color, t.estimated_mins_to_complete AS t__estimated_mins_to_complete, t.actual_mins_to_complete AS t__actual_mins_to_complete, t.phase_id AS t__phase_id, t.department_id AS t__department_id, t.created_at AS t__created_at, t.updated_at AS t__updated_at FROM task t - ()
+Dec 04 19:52:55 symfony [info] {sfPHPView} Render "/Applications/MAMP/htdocs/kanban/sf_sandbox/apps/frontend/modules/board/templates/indexSuccess.php"
+Dec 04 19:52:55 symfony [info] {Doctrine_Connection_Statement} execute : SELECT t.id AS t__id, t.name AS t__name, t.description AS t__description, t.slug AS t__slug, t.task_color AS t__task_color, t.estimated_mins_to_complete AS t__estimated_mins_to_complete, t.actual_mins_to_complete AS t__actual_mins_to_complete, t.phase_id AS t__phase_id, t.department_id AS t__department_id, t.created_at AS t__created_at, t.updated_at AS t__updated_at FROM task t WHERE (t.phase_id IN (?)) - (1)
+Dec 04 19:52:55 symfony [info] {Doctrine_Connection_Statement} execute : SELECT d.id AS d__id, d.name AS d__name, d.description AS d__description, d.short_name AS d__short_name, d.task_color AS d__task_color, d.created_at AS d__created_at, d.updated_at AS d__updated_at FROM department d WHERE (d.id = ?) - (1)
+Dec 04 19:52:55 symfony [info] {Doctrine_Connection_Statement} execute : SELECT d.id AS d__id, d.name AS d__name, d.description AS d__description, d.short_name AS d__short_name, d.task_color AS d__task_color, d.created_at AS d__created_at, d.updated_at AS d__updated_at FROM department d WHERE (d.id = ?) - (2)
+Dec 04 19:52:55 symfony [info] {Doctrine_Connection_Statement} execute : SELECT t.id AS t__id, t.name AS t__name, t.description AS t__description, t.slug AS t__slug, t.task_color AS t__task_color, t.estimated_mins_to_complete AS t__estimated_mins_to_complete, t.actual_mins_to_complete AS t__actual_mins_to_complete, t.phase_id AS t__phase_id, t.department_id AS t__department_id, t.created_at AS t__created_at, t.updated_at AS t__updated_at FROM task t WHERE (t.phase_id IN (?)) - (2)
+Dec 04 19:52:55 symfony [info] {Doctrine_Connection_Statement} execute : SELECT d.id AS d__id, d.name AS d__name, d.description AS d__description, d.short_name AS d__short_name, d.task_color AS d__task_color, d.created_at AS d__created_at, d.updated_at AS d__updated_at FROM department d WHERE (d.id = ?) - (2)
+Dec 04 19:52:55 symfony [info] {Doctrine_Connection_Statement} execute : SELECT d.id AS d__id, d.name AS d__name, d.description AS d__description, d.short_name AS d__short_name, d.task_color AS d__task_color, d.created_at AS d__created_at, d.updated_at AS d__updated_at FROM department d WHERE (d.id = ?) - (3)
+Dec 04 19:52:55 symfony [info] {Doctrine_Connection_Statement} execute : SELECT t.id AS t__id, t.name AS t__name, t.description AS t__description, t.slug AS t__slug, t.task_color AS t__task_color, t.estimated_mins_to_complete AS t__estimated_mins_to_complete, t.actual_mins_to_complete AS t__actual_mins_to_complete, t.phase_id AS t__phase_id, t.department_id AS t__department_id, t.created_at AS t__created_at, t.updated_at AS t__updated_at FROM task t WHERE (t.phase_id IN (?)) - (3)
+Dec 04 19:52:55 symfony [info] {Doctrine_Connection_Statement} execute : SELECT d.id AS d__id, d.name AS d__name, d.description AS d__description, d.short_name AS d__short_name, d.task_color AS d__task_color, d.created_at AS d__created_at, d.updated_at AS d__updated_at FROM department d WHERE (d.id = ?) - (2)
+Dec 04 19:52:55 symfony [info] {Doctrine_Connection_Statement} execute : SELECT d.id AS d__id, d.name AS d__name, d.description AS d__description, d.short_name AS d__short_name, d.task_color AS d__task_color, d.created_at AS d__created_at, d.updated_at AS d__updated_at FROM department d WHERE (d.id = ?) - (1)
+Dec 04 19:52:55 symfony [info] {Doctrine_Connection_Statement} execute : SELECT d.id AS d__id, d.name AS d__name, d.description AS d__description, d.short_name AS d__short_name, d.task_color AS d__task_color, d.created_at AS d__created_at, d.updated_at AS d__updated_at FROM department d WHERE (d.id = ?) - (5)
+Dec 04 19:52:55 symfony [info] {Doctrine_Connection_Statement} execute : SELECT t.id AS t__id, t.name AS t__name, t.description AS t__description, t.slug AS t__slug, t.task_color AS t__task_color, t.estimated_mins_to_complete AS t__estimated_mins_to_complete, t.actual_mins_to_complete AS t__actual_mins_to_complete, t.phase_id AS t__phase_id, t.department_id AS t__department_id, t.created_at AS t__created_at, t.updated_at AS t__updated_at FROM task t WHERE (t.phase_id IN (?)) - (4)
+Dec 04 19:52:55 symfony [info] {Doctrine_Connection_Statement} execute : SELECT d.id AS d__id, d.name AS d__name, d.description AS d__description, d.short_name AS d__short_name, d.task_color AS d__task_color, d.created_at AS d__created_at, d.updated_at AS d__updated_at FROM department d WHERE (d.id = ?) - (1)
+Dec 04 19:52:55 symfony [info] {Doctrine_Connection_Statement} execute : SELECT t.id AS t__id, t.name AS t__name, t.description AS t__description, t.slug AS t__slug, t.task_color AS t__task_color, t.estimated_mins_to_complete AS t__estimated_mins_to_complete, t.actual_mins_to_complete AS t__actual_mins_to_complete, t.phase_id AS t__phase_id, t.department_id AS t__department_id, t.created_at AS t__created_at, t.updated_at AS t__updated_at FROM task t WHERE (t.phase_id IN (?)) - (5)
+Dec 04 19:52:55 symfony [info] {Doctrine_Connection_Statement} execute : SELECT d.id AS d__id, d.name AS d__name, d.description AS d__description, d.short_name AS d__short_name, d.task_color AS d__task_color, d.created_at AS d__created_at, d.updated_at AS d__updated_at FROM department d WHERE (d.id = ?) - (1)
+Dec 04 19:52:55 symfony [info] {sfPHPView} Decorate content with "/Applications/MAMP/htdocs/kanban/sf_sandbox/apps/frontend/templates/layout.php"
+Dec 04 19:52:55 symfony [info] {sfPHPView} Render "/Applications/MAMP/htdocs/kanban/sf_sandbox/apps/frontend/templates/layout.php"
+Dec 04 19:52:55 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Dec 04 19:52:55 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Dec 04 19:52:55 symfony [info] {sfWebDebugLogger} Configuration 3.70 ms (9)
+Dec 04 19:52:55 symfony [info] {sfWebDebugLogger} Factories 486.42 ms (1)
+Dec 04 19:52:55 symfony [info] {sfWebDebugLogger} Action "board/index" 1003.10 ms (1)
+Dec 04 19:52:55 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.09 ms (17)
+Dec 04 19:52:55 symfony [info] {sfWebDebugLogger} View "Success" for "board/index" 420.54 ms (1)
+Dec 04 19:52:56 symfony [info] {sfWebResponse} Send content (76077 o)
+Dec 04 19:57:04 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'board',  'action' => 'index',)
+Dec 04 19:57:04 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Dec 04 19:57:04 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Dec 04 19:57:04 symfony [info] {boardActions} Call "boardActions->executeIndex()"
+Dec 04 19:57:04 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'utf8' - ()
+Dec 04 19:57:04 symfony [info] {Doctrine_Connection_Mysql} query : SELECT p.id AS p__id, p.name AS p__name, p.description AS p__description, p.slug AS p__slug, p.created_at AS p__created_at, p.updated_at AS p__updated_at FROM phase p - ()
+Dec 04 19:57:04 symfony [info] {Doctrine_Connection_Mysql} query : SELECT t.id AS t__id, t.name AS t__name, t.description AS t__description, t.slug AS t__slug, t.task_color AS t__task_color, t.estimated_mins_to_complete AS t__estimated_mins_to_complete, t.actual_mins_to_complete AS t__actual_mins_to_complete, t.phase_id AS t__phase_id, t.department_id AS t__department_id, t.created_at AS t__created_at, t.updated_at AS t__updated_at FROM task t - ()
+Dec 04 19:57:04 symfony [info] {sfPHPView} Render "/Applications/MAMP/htdocs/kanban/sf_sandbox/apps/frontend/modules/board/templates/indexSuccess.php"
+Dec 04 19:57:05 symfony [info] {sfPHPView} Decorate content with "/Applications/MAMP/htdocs/kanban/sf_sandbox/apps/frontend/templates/layout.php"
+Dec 04 19:57:05 symfony [info] {sfPHPView} Render "/Applications/MAMP/htdocs/kanban/sf_sandbox/apps/frontend/templates/layout.php"
+Dec 04 19:57:05 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Dec 04 19:57:05 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Dec 04 19:57:05 symfony [info] {sfWebDebugLogger} Configuration 3.18 ms (9)
+Dec 04 19:57:05 symfony [info] {sfWebDebugLogger} Factories 453.96 ms (1)
+Dec 04 19:57:05 symfony [info] {sfWebDebugLogger} Action "board/index" 372.81 ms (1)
+Dec 04 19:57:05 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.02 ms (3)
+Dec 04 19:57:05 symfony [info] {sfWebDebugLogger} View "Success" for "board/index" 152.69 ms (1)
+Dec 04 19:57:05 symfony [info] {sfWebResponse} Send content (45187 o)
+Dec 04 19:57:06 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'board',  'action' => 'index',)
+Dec 04 19:57:06 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Dec 04 19:57:06 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Dec 04 19:57:06 symfony [info] {boardActions} Call "boardActions->executeIndex()"
+Dec 04 19:57:06 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'utf8' - ()
+Dec 04 19:57:06 symfony [info] {Doctrine_Connection_Mysql} query : SELECT p.id AS p__id, p.name AS p__name, p.description AS p__description, p.slug AS p__slug, p.created_at AS p__created_at, p.updated_at AS p__updated_at FROM phase p - ()
+Dec 04 19:57:06 symfony [info] {Doctrine_Connection_Mysql} query : SELECT t.id AS t__id, t.name AS t__name, t.description AS t__description, t.slug AS t__slug, t.task_color AS t__task_color, t.estimated_mins_to_complete AS t__estimated_mins_to_complete, t.actual_mins_to_complete AS t__actual_mins_to_complete, t.phase_id AS t__phase_id, t.department_id AS t__department_id, t.created_at AS t__created_at, t.updated_at AS t__updated_at FROM task t - ()
+Dec 04 19:57:06 symfony [info] {sfPHPView} Render "/Applications/MAMP/htdocs/kanban/sf_sandbox/apps/frontend/modules/board/templates/indexSuccess.php"
+Dec 04 19:57:06 symfony [info] {sfPHPView} Decorate content with "/Applications/MAMP/htdocs/kanban/sf_sandbox/apps/frontend/templates/layout.php"
+Dec 04 19:57:06 symfony [info] {sfPHPView} Render "/Applications/MAMP/htdocs/kanban/sf_sandbox/apps/frontend/templates/layout.php"
+Dec 04 19:57:06 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Dec 04 19:57:06 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Dec 04 19:57:06 symfony [info] {sfWebDebugLogger} Configuration 1.54 ms (9)
+Dec 04 19:57:06 symfony [info] {sfWebDebugLogger} Factories 45.74 ms (1)
+Dec 04 19:57:06 symfony [info] {sfWebDebugLogger} Action "board/index" 62.76 ms (1)
+Dec 04 19:57:06 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.01 ms (3)
+Dec 04 19:57:06 symfony [info] {sfWebDebugLogger} View "Success" for "board/index" 42.52 ms (1)
+Dec 04 19:57:06 symfony [info] {sfWebResponse} Send content (44797 o)
+Dec 04 19:58:55 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'board',  'action' => 'index',)
+Dec 04 19:58:55 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Dec 04 19:58:55 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Dec 04 19:58:55 symfony [info] {boardActions} Call "boardActions->executeIndex()"
+Dec 04 19:58:56 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'utf8' - ()
+Dec 04 19:58:56 symfony [info] {Doctrine_Connection_Mysql} query : SELECT p.id AS p__id, p.name AS p__name, p.description AS p__description, p.slug AS p__slug, p.created_at AS p__created_at, p.updated_at AS p__updated_at FROM phase p - ()
+Dec 04 19:58:56 symfony [info] {Doctrine_Connection_Mysql} query : SELECT t.id AS t__id, t.name AS t__name, t.description AS t__description, t.slug AS t__slug, t.task_color AS t__task_color, t.estimated_mins_to_complete AS t__estimated_mins_to_complete, t.actual_mins_to_complete AS t__actual_mins_to_complete, t.phase_id AS t__phase_id, t.department_id AS t__department_id, t.created_at AS t__created_at, t.updated_at AS t__updated_at FROM task t - ()
+Dec 04 19:58:56 symfony [info] {sfPHPView} Render "/Applications/MAMP/htdocs/kanban/sf_sandbox/apps/frontend/modules/board/templates/indexSuccess.php"
+Dec 04 19:58:56 symfony [info] {Doctrine_Connection_Statement} execute : SELECT t.id AS t__id, t.name AS t__name, t.description AS t__description, t.slug AS t__slug, t.task_color AS t__task_color, t.estimated_mins_to_complete AS t__estimated_mins_to_complete, t.actual_mins_to_complete AS t__actual_mins_to_complete, t.phase_id AS t__phase_id, t.department_id AS t__department_id, t.created_at AS t__created_at, t.updated_at AS t__updated_at FROM task t WHERE (t.phase_id IN (?)) - (1)
+Dec 04 19:58:56 symfony [info] {Doctrine_Connection_Statement} execute : SELECT d.id AS d__id, d.name AS d__name, d.description AS d__description, d.short_name AS d__short_name, d.task_color AS d__task_color, d.created_at AS d__created_at, d.updated_at AS d__updated_at FROM department d WHERE (d.id = ?) - (1)
+Dec 04 19:58:56 symfony [info] {Doctrine_Connection_Statement} execute : SELECT d.id AS d__id, d.name AS d__name, d.description AS d__description, d.short_name AS d__short_name, d.task_color AS d__task_color, d.created_at AS d__created_at, d.updated_at AS d__updated_at FROM department d WHERE (d.id = ?) - (2)
+Dec 04 19:58:56 symfony [info] {Doctrine_Connection_Statement} execute : SELECT t.id AS t__id, t.name AS t__name, t.description AS t__description, t.slug AS t__slug, t.task_color AS t__task_color, t.estimated_mins_to_complete AS t__estimated_mins_to_complete, t.actual_mins_to_complete AS t__actual_mins_to_complete, t.phase_id AS t__phase_id, t.department_id AS t__department_id, t.created_at AS t__created_at, t.updated_at AS t__updated_at FROM task t WHERE (t.phase_id IN (?)) - (2)
+Dec 04 19:58:56 symfony [info] {Doctrine_Connection_Statement} execute : SELECT d.id AS d__id, d.name AS d__name, d.description AS d__description, d.short_name AS d__short_name, d.task_color AS d__task_color, d.created_at AS d__created_at, d.updated_at AS d__updated_at FROM department d WHERE (d.id = ?) - (2)
+Dec 04 19:58:56 symfony [info] {Doctrine_Connection_Statement} execute : SELECT d.id AS d__id, d.name AS d__name, d.description AS d__description, d.short_name AS d__short_name, d.task_color AS d__task_color, d.created_at AS d__created_at, d.updated_at AS d__updated_at FROM department d WHERE (d.id = ?) - (3)
+Dec 04 19:58:56 symfony [info] {Doctrine_Connection_Statement} execute : SELECT t.id AS t__id, t.name AS t__name, t.description AS t__description, t.slug AS t__slug, t.task_color AS t__task_color, t.estimated_mins_to_complete AS t__estimated_mins_to_complete, t.actual_mins_to_complete AS t__actual_mins_to_complete, t.phase_id AS t__phase_id, t.department_id AS t__department_id, t.created_at AS t__created_at, t.updated_at AS t__updated_at FROM task t WHERE (t.phase_id IN (?)) - (3)
+Dec 04 19:58:56 symfony [info] {Doctrine_Connection_Statement} execute : SELECT d.id AS d__id, d.name AS d__name, d.description AS d__description, d.short_name AS d__short_name, d.task_color AS d__task_color, d.created_at AS d__created_at, d.updated_at AS d__updated_at FROM department d WHERE (d.id = ?) - (2)
+Dec 04 19:58:56 symfony [info] {Doctrine_Connection_Statement} execute : SELECT d.id AS d__id, d.name AS d__name, d.description AS d__description, d.short_name AS d__short_name, d.task_color AS d__task_color, d.created_at AS d__created_at, d.updated_at AS d__updated_at FROM department d WHERE (d.id = ?) - (1)
+Dec 04 19:58:56 symfony [info] {Doctrine_Connection_Statement} execute : SELECT d.id AS d__id, d.name AS d__name, d.description AS d__description, d.short_name AS d__short_name, d.task_color AS d__task_color, d.created_at AS d__created_at, d.updated_at AS d__updated_at FROM department d WHERE (d.id = ?) - (5)
+Dec 04 19:58:56 symfony [info] {Doctrine_Connection_Statement} execute : SELECT t.id AS t__id, t.name AS t__name, t.description AS t__description, t.slug AS t__slug, t.task_color AS t__task_color, t.estimated_mins_to_complete AS t__estimated_mins_to_complete, t.actual_mins_to_complete AS t__actual_mins_to_complete, t.phase_id AS t__phase_id, t.department_id AS t__department_id, t.created_at AS t__created_at, t.updated_at AS t__updated_at FROM task t WHERE (t.phase_id IN (?)) - (4)
+Dec 04 19:58:56 symfony [info] {Doctrine_Connection_Statement} execute : SELECT d.id AS d__id, d.name AS d__name, d.description AS d__description, d.short_name AS d__short_name, d.task_color AS d__task_color, d.created_at AS d__created_at, d.updated_at AS d__updated_at FROM department d WHERE (d.id = ?) - (1)
+Dec 04 19:58:56 symfony [info] {Doctrine_Connection_Statement} execute : SELECT t.id AS t__id, t.name AS t__name, t.description AS t__description, t.slug AS t__slug, t.task_color AS t__task_color, t.estimated_mins_to_complete AS t__estimated_mins_to_complete, t.actual_mins_to_complete AS t__actual_mins_to_complete, t.phase_id AS t__phase_id, t.department_id AS t__department_id, t.created_at AS t__created_at, t.updated_at AS t__updated_at FROM task t WHERE (t.phase_id IN (?)) - (5)
+Dec 04 19:58:56 symfony [info] {Doctrine_Connection_Statement} execute : SELECT d.id AS d__id, d.name AS d__name, d.description AS d__description, d.short_name AS d__short_name, d.task_color AS d__task_color, d.created_at AS d__created_at, d.updated_at AS d__updated_at FROM department d WHERE (d.id = ?) - (1)
+Dec 04 19:58:56 symfony [info] {sfPHPView} Decorate content with "/Applications/MAMP/htdocs/kanban/sf_sandbox/apps/frontend/templates/layout.php"
+Dec 04 19:58:56 symfony [info] {sfPHPView} Render "/Applications/MAMP/htdocs/kanban/sf_sandbox/apps/frontend/templates/layout.php"
+Dec 04 19:58:56 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Dec 04 19:58:56 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Dec 04 19:58:56 symfony [info] {sfWebDebugLogger} Configuration 2.65 ms (9)
+Dec 04 19:58:56 symfony [info] {sfWebDebugLogger} Factories 400.84 ms (1)
+Dec 04 19:58:56 symfony [info] {sfWebDebugLogger} Action "board/index" 674.69 ms (1)
+Dec 04 19:58:56 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.05 ms (17)
+Dec 04 19:58:56 symfony [info] {sfWebDebugLogger} View "Success" for "board/index" 415.60 ms (1)
+Dec 04 19:58:56 symfony [info] {sfWebResponse} Send content (75791 o)
+Dec 04 19:59:02 symfony [info] {sfPatternRouting} Match route "updateProjectTask" (/updateProjectTask) for /updateProjectTask with parameters array (  'module' => 'board',  'action' => 'updateProjectTask',)
+Dec 04 19:59:02 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Dec 04 19:59:02 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Dec 04 19:59:02 symfony [info] {boardActions} Call "boardActions->executeUpdateProjectTask()"
+Dec 04 19:59:02 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'utf8' - ()
+Dec 04 19:59:02 symfony [info] {Doctrine_Connection_Statement} execute : SELECT t.id AS t__id, t.name AS t__name, t.description AS t__description, t.slug AS t__slug, t.task_color AS t__task_color, t.estimated_mins_to_complete AS t__estimated_mins_to_complete, t.actual_mins_to_complete AS t__actual_mins_to_complete, t.phase_id AS t__phase_id, t.department_id AS t__department_id, t.created_at AS t__created_at, t.updated_at AS t__updated_at FROM task t WHERE (t.slug = ?) - ()
+Dec 04 19:59:02 symfony [info] {Doctrine_Connection_Statement} execute : SELECT p.id AS p__id, p.name AS p__name, p.description AS p__description, p.slug AS p__slug, p.created_at AS p__created_at, p.updated_at AS p__updated_at FROM phase p WHERE (p.slug = ?) - (phase-one)
+Dec 04 19:59:04 symfony [info] {sfPatternRouting} Match route "updateProjectTask" (/updateProjectTask) for /updateProjectTask with parameters array (  'module' => 'board',  'action' => 'updateProjectTask',)
+Dec 04 19:59:04 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Dec 04 19:59:04 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Dec 04 19:59:04 symfony [info] {boardActions} Call "boardActions->executeUpdateProjectTask()"
+Dec 04 19:59:04 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'utf8' - ()
+Dec 04 19:59:04 symfony [info] {Doctrine_Connection_Statement} execute : SELECT t.id AS t__id, t.name AS t__name, t.description AS t__description, t.slug AS t__slug, t.task_color AS t__task_color, t.estimated_mins_to_complete AS t__estimated_mins_to_complete, t.actual_mins_to_complete AS t__actual_mins_to_complete, t.phase_id AS t__phase_id, t.department_id AS t__department_id, t.created_at AS t__created_at, t.updated_at AS t__updated_at FROM task t WHERE (t.slug = ?) - ()
+Dec 04 19:59:04 symfony [info] {Doctrine_Connection_Statement} execute : SELECT p.id AS p__id, p.name AS p__name, p.description AS p__description, p.slug AS p__slug, p.created_at AS p__created_at, p.updated_at AS p__updated_at FROM phase p WHERE (p.slug = ?) - (phase-one)
+Dec 04 19:59:07 symfony [info] {sfPatternRouting} Match route "updateProjectTask" (/updateProjectTask) for /updateProjectTask with parameters array (  'module' => 'board',  'action' => 'updateProjectTask',)
+Dec 04 19:59:07 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Dec 04 19:59:07 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Dec 04 19:59:07 symfony [info] {boardActions} Call "boardActions->executeUpdateProjectTask()"
+Dec 04 19:59:07 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'utf8' - ()
+Dec 04 19:59:07 symfony [info] {Doctrine_Connection_Statement} execute : SELECT t.id AS t__id, t.name AS t__name, t.description AS t__description, t.slug AS t__slug, t.task_color AS t__task_color, t.estimated_mins_to_complete AS t__estimated_mins_to_complete, t.actual_mins_to_complete AS t__actual_mins_to_complete, t.phase_id AS t__phase_id, t.department_id AS t__department_id, t.created_at AS t__created_at, t.updated_at AS t__updated_at FROM task t WHERE (t.slug = ?) - ()
+Dec 04 19:59:07 symfony [info] {Doctrine_Connection_Statement} execute : SELECT p.id AS p__id, p.name AS p__name, p.description AS p__description, p.slug AS p__slug, p.created_at AS p__created_at, p.updated_at AS p__updated_at FROM phase p WHERE (p.slug = ?) - (phase-one)
+Dec 04 19:59:09 symfony [info] {sfPatternRouting} Match route "updateProjectTask" (/updateProjectTask) for /updateProjectTask with parameters array (  'module' => 'board',  'action' => 'updateProjectTask',)
+Dec 04 19:59:09 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Dec 04 19:59:09 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Dec 04 19:59:09 symfony [info] {boardActions} Call "boardActions->executeUpdateProjectTask()"
+Dec 04 19:59:09 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'utf8' - ()
+Dec 04 19:59:09 symfony [info] {Doctrine_Connection_Statement} execute : SELECT t.id AS t__id, t.name AS t__name, t.description AS t__description, t.slug AS t__slug, t.task_color AS t__task_color, t.estimated_mins_to_complete AS t__estimated_mins_to_complete, t.actual_mins_to_complete AS t__actual_mins_to_complete, t.phase_id AS t__phase_id, t.department_id AS t__department_id, t.created_at AS t__created_at, t.updated_at AS t__updated_at FROM task t WHERE (t.slug = ?) - ()
+Dec 04 19:59:09 symfony [info] {Doctrine_Connection_Statement} execute : SELECT p.id AS p__id, p.name AS p__name, p.description AS p__description, p.slug AS p__slug, p.created_at AS p__created_at, p.updated_at AS p__updated_at FROM phase p WHERE (p.slug = ?) - (phase-two)
+Dec 04 19:59:11 symfony [info] {sfPatternRouting} Match route "updateProjectTask" (/updateProjectTask) for /updateProjectTask with parameters array (  'module' => 'board',  'action' => 'updateProjectTask',)
+Dec 04 19:59:11 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Dec 04 19:59:11 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Dec 04 19:59:11 symfony [info] {boardActions} Call "boardActions->executeUpdateProjectTask()"
+Dec 04 19:59:11 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'utf8' - ()
+Dec 04 19:59:11 symfony [info] {Doctrine_Connection_Statement} execute : SELECT t.id AS t__id, t.name AS t__name, t.description AS t__description, t.slug AS t__slug, t.task_color AS t__task_color, t.estimated_mins_to_complete AS t__estimated_mins_to_complete, t.actual_mins_to_complete AS t__actual_mins_to_complete, t.phase_id AS t__phase_id, t.department_id AS t__department_id, t.created_at AS t__created_at, t.updated_at AS t__updated_at FROM task t WHERE (t.slug = ?) - ()
+Dec 04 19:59:11 symfony [info] {Doctrine_Connection_Statement} execute : SELECT p.id AS p__id, p.name AS p__name, p.description AS p__description, p.slug AS p__slug, p.created_at AS p__created_at, p.updated_at AS p__updated_at FROM phase p WHERE (p.slug = ?) - (phase-one)
+Dec 04 19:59:12 symfony [info] {sfPatternRouting} Match route "updateProjectTask" (/updateProjectTask) for /updateProjectTask with parameters array (  'module' => 'board',  'action' => 'updateProjectTask',)
+Dec 04 19:59:12 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Dec 04 19:59:12 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Dec 04 19:59:12 symfony [info] {boardActions} Call "boardActions->executeUpdateProjectTask()"
+Dec 04 19:59:12 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'utf8' - ()
+Dec 04 19:59:12 symfony [info] {Doctrine_Connection_Statement} execute : SELECT t.id AS t__id, t.name AS t__name, t.description AS t__description, t.slug AS t__slug, t.task_color AS t__task_color, t.estimated_mins_to_complete AS t__estimated_mins_to_complete, t.actual_mins_to_complete AS t__actual_mins_to_complete, t.phase_id AS t__phase_id, t.department_id AS t__department_id, t.created_at AS t__created_at, t.updated_at AS t__updated_at FROM task t WHERE (t.slug = ?) - ()
+Dec 04 19:59:12 symfony [info] {Doctrine_Connection_Statement} execute : SELECT p.id AS p__id, p.name AS p__name, p.description AS p__description, p.slug AS p__slug, p.created_at AS p__created_at, p.updated_at AS p__updated_at FROM phase p WHERE (p.slug = ?) - (phase-one)
+Dec 04 19:59:14 symfony [info] {sfPatternRouting} Match route "updateProjectTask" (/updateProjectTask) for /updateProjectTask with parameters array (  'module' => 'board',  'action' => 'updateProjectTask',)
+Dec 04 19:59:14 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Dec 04 19:59:14 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Dec 04 19:59:14 symfony [info] {boardActions} Call "boardActions->executeUpdateProjectTask()"
+Dec 04 19:59:14 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'utf8' - ()
+Dec 04 19:59:14 symfony [info] {Doctrine_Connection_Statement} execute : SELECT t.id AS t__id, t.name AS t__name, t.description AS t__description, t.slug AS t__slug, t.task_color AS t__task_color, t.estimated_mins_to_complete AS t__estimated_mins_to_complete, t.actual_mins_to_complete AS t__actual_mins_to_complete, t.phase_id AS t__phase_id, t.department_id AS t__department_id, t.created_at AS t__created_at, t.updated_at AS t__updated_at FROM task t WHERE (t.slug = ?) - ()
+Dec 04 19:59:14 symfony [info] {Doctrine_Connection_Statement} execute : SELECT p.id AS p__id, p.name AS p__name, p.description AS p__description, p.slug AS p__slug, p.created_at AS p__created_at, p.updated_at AS p__updated_at FROM phase p WHERE (p.slug = ?) - (phase-one)
+Dec 04 19:59:16 symfony [info] {sfPatternRouting} Match route "updateProjectTask" (/updateProjectTask) for /updateProjectTask with parameters array (  'module' => 'board',  'action' => 'updateProjectTask',)
+Dec 04 19:59:16 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Dec 04 19:59:16 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Dec 04 19:59:16 symfony [info] {boardActions} Call "boardActions->executeUpdateProjectTask()"
+Dec 04 19:59:16 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'utf8' - ()
+Dec 04 19:59:16 symfony [info] {Doctrine_Connection_Statement} execute : SELECT t.id AS t__id, t.name AS t__name, t.description AS t__description, t.slug AS t__slug, t.task_color AS t__task_color, t.estimated_mins_to_complete AS t__estimated_mins_to_complete, t.actual_mins_to_complete AS t__actual_mins_to_complete, t.phase_id AS t__phase_id, t.department_id AS t__department_id, t.created_at AS t__created_at, t.updated_at AS t__updated_at FROM task t WHERE (t.slug = ?) - ()
+Dec 04 19:59:16 symfony [info] {Doctrine_Connection_Statement} execute : SELECT p.id AS p__id, p.name AS p__name, p.description AS p__description, p.slug AS p__slug, p.created_at AS p__created_at, p.updated_at AS p__updated_at FROM phase p WHERE (p.slug = ?) - (phase-one)
+Dec 04 19:59:17 symfony [info] {sfPatternRouting} Match route "updateProjectTask" (/updateProjectTask) for /updateProjectTask with parameters array (  'module' => 'board',  'action' => 'updateProjectTask',)
+Dec 04 19:59:17 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Dec 04 19:59:17 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Dec 04 19:59:17 symfony [info] {boardActions} Call "boardActions->executeUpdateProjectTask()"
+Dec 04 19:59:17 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'utf8' - ()
+Dec 04 19:59:17 symfony [info] {Doctrine_Connection_Statement} execute : SELECT t.id AS t__id, t.name AS t__name, t.description AS t__description, t.slug AS t__slug, t.task_color AS t__task_color, t.estimated_mins_to_complete AS t__estimated_mins_to_complete, t.actual_mins_to_complete AS t__actual_mins_to_complete, t.phase_id AS t__phase_id, t.department_id AS t__department_id, t.created_at AS t__created_at, t.updated_at AS t__updated_at FROM task t WHERE (t.slug = ?) - ()
+Dec 04 19:59:17 symfony [info] {Doctrine_Connection_Statement} execute : SELECT p.id AS p__id, p.name AS p__name, p.description AS p__description, p.slug AS p__slug, p.created_at AS p__created_at, p.updated_at AS p__updated_at FROM phase p WHERE (p.slug = ?) - (phase-three)
+Dec 04 19:59:19 symfony [info] {sfPatternRouting} Match route "updateProjectTask" (/updateProjectTask) for /updateProjectTask with parameters array (  'module' => 'board',  'action' => 'updateProjectTask',)
+Dec 04 19:59:19 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Dec 04 19:59:19 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Dec 04 19:59:19 symfony [info] {boardActions} Call "boardActions->executeUpdateProjectTask()"
+Dec 04 19:59:19 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'utf8' - ()
+Dec 04 19:59:19 symfony [info] {Doctrine_Connection_Statement} execute : SELECT t.id AS t__id, t.name AS t__name, t.description AS t__description, t.slug AS t__slug, t.task_color AS t__task_color, t.estimated_mins_to_complete AS t__estimated_mins_to_complete, t.actual_mins_to_complete AS t__actual_mins_to_complete, t.phase_id AS t__phase_id, t.department_id AS t__department_id, t.created_at AS t__created_at, t.updated_at AS t__updated_at FROM task t WHERE (t.slug = ?) - ()
+Dec 04 19:59:19 symfony [info] {Doctrine_Connection_Statement} execute : SELECT p.id AS p__id, p.name AS p__name, p.description AS p__description, p.slug AS p__slug, p.created_at AS p__created_at, p.updated_at AS p__updated_at FROM phase p WHERE (p.slug = ?) - (phase-four)
+Dec 04 19:59:20 symfony [info] {sfPatternRouting} Match route "updateProjectTask" (/updateProjectTask) for /updateProjectTask with parameters array (  'module' => 'board',  'action' => 'updateProjectTask',)
+Dec 04 19:59:20 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Dec 04 19:59:20 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Dec 04 19:59:20 symfony [info] {boardActions} Call "boardActions->executeUpdateProjectTask()"
+Dec 04 19:59:20 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'utf8' - ()
+Dec 04 19:59:20 symfony [info] {Doctrine_Connection_Statement} execute : SELECT t.id AS t__id, t.name AS t__name, t.description AS t__description, t.slug AS t__slug, t.task_color AS t__task_color, t.estimated_mins_to_complete AS t__estimated_mins_to_complete, t.actual_mins_to_complete AS t__actual_mins_to_complete, t.phase_id AS t__phase_id, t.department_id AS t__department_id, t.created_at AS t__created_at, t.updated_at AS t__updated_at FROM task t WHERE (t.slug = ?) - ()
+Dec 04 19:59:20 symfony [info] {Doctrine_Connection_Statement} execute : SELECT p.id AS p__id, p.name AS p__name, p.description AS p__description, p.slug AS p__slug, p.created_at AS p__created_at, p.updated_at AS p__updated_at FROM phase p WHERE (p.slug = ?) - (phase-two)
+Dec 04 19:59:22 symfony [info] {sfPatternRouting} Match route "updateProjectTask" (/updateProjectTask) for /updateProjectTask with parameters array (  'module' => 'board',  'action' => 'updateProjectTask',)
+Dec 04 19:59:22 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Dec 04 19:59:22 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Dec 04 19:59:22 symfony [info] {boardActions} Call "boardActions->executeUpdateProjectTask()"
+Dec 04 19:59:22 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'utf8' - ()
+Dec 04 19:59:22 symfony [info] {Doctrine_Connection_Statement} execute : SELECT t.id AS t__id, t.name AS t__name, t.description AS t__description, t.slug AS t__slug, t.task_color AS t__task_color, t.estimated_mins_to_complete AS t__estimated_mins_to_complete, t.actual_mins_to_complete AS t__actual_mins_to_complete, t.phase_id AS t__phase_id, t.department_id AS t__department_id, t.created_at AS t__created_at, t.updated_at AS t__updated_at FROM task t WHERE (t.slug = ?) - ()
+Dec 04 19:59:22 symfony [info] {Doctrine_Connection_Statement} execute : SELECT p.id AS p__id, p.name AS p__name, p.description AS p__description, p.slug AS p__slug, p.created_at AS p__created_at, p.updated_at AS p__updated_at FROM phase p WHERE (p.slug = ?) - (phase-one)
+Dec 04 19:59:23 symfony [info] {sfPatternRouting} Match route "updateProjectTask" (/updateProjectTask) for /updateProjectTask with parameters array (  'module' => 'board',  'action' => 'updateProjectTask',)
+Dec 04 19:59:23 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Dec 04 19:59:23 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Dec 04 19:59:23 symfony [info] {boardActions} Call "boardActions->executeUpdateProjectTask()"
+Dec 04 19:59:23 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'utf8' - ()
+Dec 04 19:59:23 symfony [info] {Doctrine_Connection_Statement} execute : SELECT t.id AS t__id, t.name AS t__name, t.description AS t__description, t.slug AS t__slug, t.task_color AS t__task_color, t.estimated_mins_to_complete AS t__estimated_mins_to_complete, t.actual_mins_to_complete AS t__actual_mins_to_complete, t.phase_id AS t__phase_id, t.department_id AS t__department_id, t.created_at AS t__created_at, t.updated_at AS t__updated_at FROM task t WHERE (t.slug = ?) - ()
+Dec 04 19:59:23 symfony [info] {Doctrine_Connection_Statement} execute : SELECT p.id AS p__id, p.name AS p__name, p.description AS p__description, p.slug AS p__slug, p.created_at AS p__created_at, p.updated_at AS p__updated_at FROM phase p WHERE (p.slug = ?) - (phase-two)
+Dec 04 19:59:25 symfony [info] {sfPatternRouting} Match route "updateProjectTask" (/updateProjectTask) for /updateProjectTask with parameters array (  'module' => 'board',  'action' => 'updateProjectTask',)
+Dec 04 19:59:26 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Dec 04 19:59:26 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Dec 04 19:59:26 symfony [info] {boardActions} Call "boardActions->executeUpdateProjectTask()"
+Dec 04 19:59:26 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'utf8' - ()
+Dec 04 19:59:26 symfony [info] {Doctrine_Connection_Statement} execute : SELECT t.id AS t__id, t.name AS t__name, t.description AS t__description, t.slug AS t__slug, t.task_color AS t__task_color, t.estimated_mins_to_complete AS t__estimated_mins_to_complete, t.actual_mins_to_complete AS t__actual_mins_to_complete, t.phase_id AS t__phase_id, t.department_id AS t__department_id, t.created_at AS t__created_at, t.updated_at AS t__updated_at FROM task t WHERE (t.slug = ?) - ()
+Dec 04 19:59:26 symfony [info] {Doctrine_Connection_Statement} execute : SELECT p.id AS p__id, p.name AS p__name, p.description AS p__description, p.slug AS p__slug, p.created_at AS p__created_at, p.updated_at AS p__updated_at FROM phase p WHERE (p.slug = ?) - (phase-four)
+Dec 04 19:59:27 symfony [info] {sfPatternRouting} Match route "updateProjectTask" (/updateProjectTask) for /updateProjectTask with parameters array (  'module' => 'board',  'action' => 'updateProjectTask',)
+Dec 04 19:59:27 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Dec 04 19:59:27 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Dec 04 19:59:27 symfony [info] {boardActions} Call "boardActions->executeUpdateProjectTask()"
+Dec 04 19:59:27 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'utf8' - ()
+Dec 04 19:59:27 symfony [info] {Doctrine_Connection_Statement} execute : SELECT t.id AS t__id, t.name AS t__name, t.description AS t__description, t.slug AS t__slug, t.task_color AS t__task_color, t.estimated_mins_to_complete AS t__estimated_mins_to_complete, t.actual_mins_to_complete AS t__actual_mins_to_complete, t.phase_id AS t__phase_id, t.department_id AS t__department_id, t.created_at AS t__created_at, t.updated_at AS t__updated_at FROM task t WHERE (t.slug = ?) - ()
+Dec 04 19:59:27 symfony [info] {Doctrine_Connection_Statement} execute : SELECT p.id AS p__id, p.name AS p__name, p.description AS p__description, p.slug AS p__slug, p.created_at AS p__created_at, p.updated_at AS p__updated_at FROM phase p WHERE (p.slug = ?) - (phase-four)
+Dec 04 19:59:28 symfony [info] {sfPatternRouting} Match route "updateProjectTask" (/updateProjectTask) for /updateProjectTask with parameters array (  'module' => 'board',  'action' => 'updateProjectTask',)
+Dec 04 19:59:28 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Dec 04 19:59:28 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Dec 04 19:59:28 symfony [info] {boardActions} Call "boardActions->executeUpdateProjectTask()"
+Dec 04 19:59:28 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'utf8' - ()
+Dec 04 19:59:28 symfony [info] {Doctrine_Connection_Statement} execute : SELECT t.id AS t__id, t.name AS t__name, t.description AS t__description, t.slug AS t__slug, t.task_color AS t__task_color, t.estimated_mins_to_complete AS t__estimated_mins_to_complete, t.actual_mins_to_complete AS t__actual_mins_to_complete, t.phase_id AS t__phase_id, t.department_id AS t__department_id, t.created_at AS t__created_at, t.updated_at AS t__updated_at FROM task t WHERE (t.slug = ?) - ()
+Dec 04 19:59:28 symfony [info] {Doctrine_Connection_Statement} execute : SELECT p.id AS p__id, p.name AS p__name, p.description AS p__description, p.slug AS p__slug, p.created_at AS p__created_at, p.updated_at AS p__updated_at FROM phase p WHERE (p.slug = ?) - (phase-four)
+Dec 04 19:59:30 symfony [info] {sfPatternRouting} Match route "updateProjectTask" (/updateProjectTask) for /updateProjectTask with parameters array (  'module' => 'board',  'action' => 'updateProjectTask',)
+Dec 04 19:59:30 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Dec 04 19:59:30 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Dec 04 19:59:30 symfony [info] {boardActions} Call "boardActions->executeUpdateProjectTask()"
+Dec 04 19:59:30 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'utf8' - ()
+Dec 04 19:59:30 symfony [info] {Doctrine_Connection_Statement} execute : SELECT t.id AS t__id, t.name AS t__name, t.description AS t__description, t.slug AS t__slug, t.task_color AS t__task_color, t.estimated_mins_to_complete AS t__estimated_mins_to_complete, t.actual_mins_to_complete AS t__actual_mins_to_complete, t.phase_id AS t__phase_id, t.department_id AS t__department_id, t.created_at AS t__created_at, t.updated_at AS t__updated_at FROM task t WHERE (t.slug = ?) - ()
+Dec 04 19:59:30 symfony [info] {Doctrine_Connection_Statement} execute : SELECT p.id AS p__id, p.name AS p__name, p.description AS p__description, p.slug AS p__slug, p.created_at AS p__created_at, p.updated_at AS p__updated_at FROM phase p WHERE (p.slug = ?) - (phase-four)
+Dec 04 20:06:30 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'board',  'action' => 'index',)
+Dec 04 20:06:30 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Dec 04 20:06:30 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Dec 04 20:06:30 symfony [info] {boardActions} Call "boardActions->executeIndex()"
+Dec 04 20:06:30 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'utf8' - ()
+Dec 04 20:06:30 symfony [info] {Doctrine_Connection_Mysql} query : SELECT p.id AS p__id, p.name AS p__name, p.description AS p__description, p.slug AS p__slug, p.created_at AS p__created_at, p.updated_at AS p__updated_at FROM phase p - ()
+Dec 04 20:06:30 symfony [info] {Doctrine_Connection_Mysql} query : SELECT t.id AS t__id, t.name AS t__name, t.description AS t__description, t.slug AS t__slug, t.task_color AS t__task_color, t.estimated_mins_to_complete AS t__estimated_mins_to_complete, t.actual_mins_to_complete AS t__actual_mins_to_complete, t.phase_id AS t__phase_id, t.department_id AS t__department_id, t.created_at AS t__created_at, t.updated_at AS t__updated_at FROM task t - ()
+Dec 04 20:06:30 symfony [info] {sfPHPView} Render "/Applications/MAMP/htdocs/kanban/sf_sandbox/apps/frontend/modules/board/templates/indexSuccess.php"
+Dec 04 20:06:30 symfony [info] {sfPHPView} Decorate content with "/Applications/MAMP/htdocs/kanban/sf_sandbox/apps/frontend/templates/layout.php"
+Dec 04 20:06:30 symfony [info] {sfPHPView} Render "/Applications/MAMP/htdocs/kanban/sf_sandbox/apps/frontend/templates/layout.php"
+Dec 04 20:06:30 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Dec 04 20:06:30 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Dec 04 20:06:30 symfony [info] {sfWebDebugLogger} Configuration 1.83 ms (9)
+Dec 04 20:06:30 symfony [info] {sfWebDebugLogger} Factories 61.29 ms (1)
+Dec 04 20:06:30 symfony [info] {sfWebDebugLogger} Action "board/index" 73.45 ms (1)
+Dec 04 20:06:30 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.01 ms (3)
+Dec 04 20:06:30 symfony [info] {sfWebDebugLogger} View "Success" for "board/index" 172.03 ms (1)
+Dec 04 20:06:30 symfony [info] {sfWebResponse} Send content (42242 o)
+Dec 04 20:09:55 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'board',  'action' => 'index',)
+Dec 04 20:09:55 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Dec 04 20:09:55 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Dec 04 20:09:55 symfony [info] {boardActions} Call "boardActions->executeIndex()"
+Dec 04 20:09:55 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'utf8' - ()
+Dec 04 20:09:55 symfony [info] {Doctrine_Connection_Mysql} query : SELECT p.id AS p__id, p.name AS p__name, p.description AS p__description, p.slug AS p__slug, p.created_at AS p__created_at, p.updated_at AS p__updated_at FROM phase p - ()
+Dec 04 20:09:55 symfony [info] {Doctrine_Connection_Mysql} query : SELECT t.id AS t__id, t.name AS t__name, t.description AS t__description, t.slug AS t__slug, t.task_color AS t__task_color, t.estimated_mins_to_complete AS t__estimated_mins_to_complete, t.actual_mins_to_complete AS t__actual_mins_to_complete, t.phase_id AS t__phase_id, t.department_id AS t__department_id, t.created_at AS t__created_at, t.updated_at AS t__updated_at FROM task t - ()
+Dec 04 20:09:55 symfony [info] {sfPHPView} Render "/Applications/MAMP/htdocs/kanban/sf_sandbox/apps/frontend/modules/board/templates/indexSuccess.php"
+Dec 04 20:09:55 symfony [info] {Doctrine_Connection_Statement} execute : SELECT t.id AS t__id, t.name AS t__name, t.description AS t__description, t.slug AS t__slug, t.task_color AS t__task_color, t.estimated_mins_to_complete AS t__estimated_mins_to_complete, t.actual_mins_to_complete AS t__actual_mins_to_complete, t.phase_id AS t__phase_id, t.department_id AS t__department_id, t.created_at AS t__created_at, t.updated_at AS t__updated_at FROM task t WHERE (t.phase_id IN (?)) - (1)
+Dec 04 20:09:55 symfony [info] {Doctrine_Connection_Statement} execute : SELECT d.id AS d__id, d.name AS d__name, d.description AS d__description, d.short_name AS d__short_name, d.task_color AS d__task_color, d.created_at AS d__created_at, d.updated_at AS d__updated_at FROM department d WHERE (d.id = ?) - (1)
+Dec 04 20:09:55 symfony [info] {Doctrine_Connection_Statement} execute : SELECT d.id AS d__id, d.name AS d__name, d.description AS d__description, d.short_name AS d__short_name, d.task_color AS d__task_color, d.created_at AS d__created_at, d.updated_at AS d__updated_at FROM department d WHERE (d.id = ?) - (2)
+Dec 04 20:09:55 symfony [info] {Doctrine_Connection_Statement} execute : SELECT t.id AS t__id, t.name AS t__name, t.description AS t__description, t.slug AS t__slug, t.task_color AS t__task_color, t.estimated_mins_to_complete AS t__estimated_mins_to_complete, t.actual_mins_to_complete AS t__actual_mins_to_complete, t.phase_id AS t__phase_id, t.department_id AS t__department_id, t.created_at AS t__created_at, t.updated_at AS t__updated_at FROM task t WHERE (t.phase_id IN (?)) - (2)
+Dec 04 20:09:55 symfony [info] {Doctrine_Connection_Statement} execute : SELECT d.id AS d__id, d.name AS d__name, d.description AS d__description, d.short_name AS d__short_name, d.task_color AS d__task_color, d.created_at AS d__created_at, d.updated_at AS d__updated_at FROM department d WHERE (d.id = ?) - (2)
+Dec 04 20:09:55 symfony [info] {Doctrine_Connection_Statement} execute : SELECT d.id AS d__id, d.name AS d__name, d.description AS d__description, d.short_name AS d__short_name, d.task_color AS d__task_color, d.created_at AS d__created_at, d.updated_at AS d__updated_at FROM department d WHERE (d.id = ?) - (3)
+Dec 04 20:09:55 symfony [info] {Doctrine_Connection_Statement} execute : SELECT t.id AS t__id, t.name AS t__name, t.description AS t__description, t.slug AS t__slug, t.task_color AS t__task_color, t.estimated_mins_to_complete AS t__estimated_mins_to_complete, t.actual_mins_to_complete AS t__actual_mins_to_complete, t.phase_id AS t__phase_id, t.department_id AS t__department_id, t.created_at AS t__created_at, t.updated_at AS t__updated_at FROM task t WHERE (t.phase_id IN (?)) - (3)
+Dec 04 20:09:55 symfony [info] {Doctrine_Connection_Statement} execute : SELECT d.id AS d__id, d.name AS d__name, d.description AS d__description, d.short_name AS d__short_name, d.task_color AS d__task_color, d.created_at AS d__created_at, d.updated_at AS d__updated_at FROM department d WHERE (d.id = ?) - (2)
+Dec 04 20:09:55 symfony [info] {Doctrine_Connection_Statement} execute : SELECT d.id AS d__id, d.name AS d__name, d.description AS d__description, d.short_name AS d__short_name, d.task_color AS d__task_color, d.created_at AS d__created_at, d.updated_at AS d__updated_at FROM department d WHERE (d.id = ?) - (1)
+Dec 04 20:09:55 symfony [info] {Doctrine_Connection_Statement} execute : SELECT d.id AS d__id, d.name AS d__name, d.description AS d__description, d.short_name AS d__short_name, d.task_color AS d__task_color, d.created_at AS d__created_at, d.updated_at AS d__updated_at FROM department d WHERE (d.id = ?) - (5)
+Dec 04 20:09:55 symfony [info] {Doctrine_Connection_Statement} execute : SELECT t.id AS t__id, t.name AS t__name, t.description AS t__description, t.slug AS t__slug, t.task_color AS t__task_color, t.estimated_mins_to_complete AS t__estimated_mins_to_complete, t.actual_mins_to_complete AS t__actual_mins_to_complete, t.phase_id AS t__phase_id, t.department_id AS t__department_id, t.created_at AS t__created_at, t.updated_at AS t__updated_at FROM task t WHERE (t.phase_id IN (?)) - (4)
+Dec 04 20:09:55 symfony [info] {Doctrine_Connection_Statement} execute : SELECT d.id AS d__id, d.name AS d__name, d.description AS d__description, d.short_name AS d__short_name, d.task_color AS d__task_color, d.created_at AS d__created_at, d.updated_at AS d__updated_at FROM department d WHERE (d.id = ?) - (1)
+Dec 04 20:09:55 symfony [info] {Doctrine_Connection_Statement} execute : SELECT t.id AS t__id, t.name AS t__name, t.description AS t__description, t.slug AS t__slug, t.task_color AS t__task_color, t.estimated_mins_to_complete AS t__estimated_mins_to_complete, t.actual_mins_to_complete AS t__actual_mins_to_complete, t.phase_id AS t__phase_id, t.department_id AS t__department_id, t.created_at AS t__created_at, t.updated_at AS t__updated_at FROM task t WHERE (t.phase_id IN (?)) - (5)
+Dec 04 20:09:55 symfony [info] {Doctrine_Connection_Statement} execute : SELECT d.id AS d__id, d.name AS d__name, d.description AS d__description, d.short_name AS d__short_name, d.task_color AS d__task_color, d.created_at AS d__created_at, d.updated_at AS d__updated_at FROM department d WHERE (d.id = ?) - (1)
+Dec 04 20:09:55 symfony [info] {sfPHPView} Decorate content with "/Applications/MAMP/htdocs/kanban/sf_sandbox/apps/frontend/templates/layout.php"
+Dec 04 20:09:55 symfony [info] {sfPHPView} Render "/Applications/MAMP/htdocs/kanban/sf_sandbox/apps/frontend/templates/layout.php"
+Dec 04 20:09:55 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Dec 04 20:09:55 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Dec 04 20:09:55 symfony [info] {sfWebDebugLogger} Configuration 1.29 ms (9)
+Dec 04 20:09:55 symfony [info] {sfWebDebugLogger} Factories 37.59 ms (1)
+Dec 04 20:09:55 symfony [info] {sfWebDebugLogger} Action "board/index" 46.94 ms (1)
+Dec 04 20:09:55 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.06 ms (17)
+Dec 04 20:09:55 symfony [info] {sfWebDebugLogger} View "Success" for "board/index" 133.71 ms (1)
+Dec 04 20:09:55 symfony [info] {sfWebResponse} Send content (74528 o)
+Dec 04 20:27:46 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'board',  'action' => 'index',)
+Dec 04 20:27:46 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Dec 04 20:27:46 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Dec 04 20:27:46 symfony [info] {boardActions} Call "boardActions->executeIndex()"
+Dec 04 20:27:46 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'utf8' - ()
+Dec 04 20:27:46 symfony [info] {Doctrine_Connection_Mysql} query : SELECT p.id AS p__id, p.name AS p__name, p.description AS p__description, p.slug AS p__slug, p.created_at AS p__created_at, p.updated_at AS p__updated_at FROM phase p - ()
+Dec 04 20:27:46 symfony [info] {Doctrine_Connection_Mysql} query : SELECT t.id AS t__id, t.name AS t__name, t.description AS t__description, t.slug AS t__slug, t.task_color AS t__task_color, t.estimated_mins_to_complete AS t__estimated_mins_to_complete, t.actual_mins_to_complete AS t__actual_mins_to_complete, t.phase_id AS t__phase_id, t.department_id AS t__department_id, t.created_at AS t__created_at, t.updated_at AS t__updated_at FROM task t - ()
+Dec 04 20:27:46 symfony [info] {sfPHPView} Render "/Applications/MAMP/htdocs/kanban/sf_sandbox/apps/frontend/modules/board/templates/indexSuccess.php"
+Dec 04 20:27:46 symfony [info] {sfPHPView} Decorate content with "/Applications/MAMP/htdocs/kanban/sf_sandbox/apps/frontend/templates/layout.php"
+Dec 04 20:27:46 symfony [info] {sfPHPView} Render "/Applications/MAMP/htdocs/kanban/sf_sandbox/apps/frontend/templates/layout.php"
+Dec 04 20:27:46 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Dec 04 20:27:46 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Dec 04 20:27:46 symfony [info] {sfWebDebugLogger} Configuration 1.46 ms (9)
+Dec 04 20:27:46 symfony [info] {sfWebDebugLogger} Factories 64.12 ms (1)
+Dec 04 20:27:46 symfony [info] {sfWebDebugLogger} Action "board/index" 122.44 ms (1)
+Dec 04 20:27:46 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.01 ms (3)
+Dec 04 20:27:46 symfony [info] {sfWebDebugLogger} View "Success" for "board/index" 35.24 ms (1)
+Dec 04 20:27:46 symfony [info] {sfWebResponse} Send content (42242 o)
+Dec 04 20:29:03 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'board',  'action' => 'index',)
+Dec 04 20:29:03 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Dec 04 20:29:03 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Dec 04 20:29:03 symfony [info] {boardActions} Call "boardActions->executeIndex()"
+Dec 04 20:29:03 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'utf8' - ()
+Dec 04 20:29:03 symfony [info] {Doctrine_Connection_Mysql} query : SELECT p.id AS p__id, p.name AS p__name, p.description AS p__description, p.slug AS p__slug, p.created_at AS p__created_at, p.updated_at AS p__updated_at FROM phase p - ()
+Dec 04 20:29:03 symfony [info] {Doctrine_Connection_Mysql} query : SELECT t.id AS t__id, t.name AS t__name, t.description AS t__description, t.slug AS t__slug, t.task_color AS t__task_color, t.estimated_mins_to_complete AS t__estimated_mins_to_complete, t.actual_mins_to_complete AS t__actual_mins_to_complete, t.phase_id AS t__phase_id, t.department_id AS t__department_id, t.created_at AS t__created_at, t.updated_at AS t__updated_at FROM task t - ()
+Dec 04 20:29:04 symfony [info] {sfPHPView} Render "/Applications/MAMP/htdocs/kanban/sf_sandbox/apps/frontend/modules/board/templates/indexSuccess.php"
+Dec 04 20:29:13 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'board',  'action' => 'index',)
+Dec 04 20:29:13 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Dec 04 20:29:13 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Dec 04 20:29:13 symfony [info] {boardActions} Call "boardActions->executeIndex()"
+Dec 04 20:29:13 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'utf8' - ()
+Dec 04 20:29:13 symfony [info] {Doctrine_Connection_Mysql} query : SELECT p.id AS p__id, p.name AS p__name, p.description AS p__description, p.slug AS p__slug, p.created_at AS p__created_at, p.updated_at AS p__updated_at FROM phase p - ()
+Dec 04 20:29:13 symfony [info] {Doctrine_Connection_Mysql} query : SELECT t.id AS t__id, t.name AS t__name, t.description AS t__description, t.slug AS t__slug, t.task_color AS t__task_color, t.estimated_mins_to_complete AS t__estimated_mins_to_complete, t.actual_mins_to_complete AS t__actual_mins_to_complete, t.phase_id AS t__phase_id, t.department_id AS t__department_id, t.created_at AS t__created_at, t.updated_at AS t__updated_at FROM task t - ()
+Dec 04 20:29:13 symfony [info] {sfPHPView} Render "/Applications/MAMP/htdocs/kanban/sf_sandbox/apps/frontend/modules/board/templates/indexSuccess.php"
+Dec 04 20:29:13 symfony [info] {sfPHPView} Decorate content with "/Applications/MAMP/htdocs/kanban/sf_sandbox/apps/frontend/templates/layout.php"
+Dec 04 20:29:13 symfony [info] {sfPHPView} Render "/Applications/MAMP/htdocs/kanban/sf_sandbox/apps/frontend/templates/layout.php"
+Dec 04 20:29:13 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Dec 04 20:29:13 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Dec 04 20:29:13 symfony [info] {sfWebDebugLogger} Configuration 1.28 ms (9)
+Dec 04 20:29:13 symfony [info] {sfWebDebugLogger} Factories 37.16 ms (1)
+Dec 04 20:29:13 symfony [info] {sfWebDebugLogger} Action "board/index" 46.80 ms (1)
+Dec 04 20:29:13 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.01 ms (3)
+Dec 04 20:29:13 symfony [info] {sfWebDebugLogger} View "Success" for "board/index" 19.09 ms (1)
+Dec 04 20:29:13 symfony [info] {sfWebResponse} Send content (43597 o)
+Dec 04 20:29:50 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'board',  'action' => 'index',)
+Dec 04 20:29:50 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Dec 04 20:29:50 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Dec 04 20:29:50 symfony [info] {boardActions} Call "boardActions->executeIndex()"
+Dec 04 20:29:50 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'utf8' - ()
+Dec 04 20:29:50 symfony [info] {Doctrine_Connection_Mysql} query : SELECT p.id AS p__id, p.name AS p__name, p.description AS p__description, p.slug AS p__slug, p.created_at AS p__created_at, p.updated_at AS p__updated_at FROM phase p - ()
+Dec 04 20:29:50 symfony [info] {Doctrine_Connection_Mysql} query : SELECT t.id AS t__id, t.name AS t__name, t.description AS t__description, t.slug AS t__slug, t.task_color AS t__task_color, t.estimated_mins_to_complete AS t__estimated_mins_to_complete, t.actual_mins_to_complete AS t__actual_mins_to_complete, t.phase_id AS t__phase_id, t.department_id AS t__department_id, t.created_at AS t__created_at, t.updated_at AS t__updated_at FROM task t - ()
+Dec 04 20:29:50 symfony [info] {sfPHPView} Render "/Applications/MAMP/htdocs/kanban/sf_sandbox/apps/frontend/modules/board/templates/indexSuccess.php"
+Dec 04 20:29:50 symfony [info] {sfPHPView} Decorate content with "/Applications/MAMP/htdocs/kanban/sf_sandbox/apps/frontend/templates/layout.php"
+Dec 04 20:29:50 symfony [info] {sfPHPView} Render "/Applications/MAMP/htdocs/kanban/sf_sandbox/apps/frontend/templates/layout.php"
+Dec 04 20:29:50 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Dec 04 20:29:50 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Dec 04 20:29:50 symfony [info] {sfWebDebugLogger} Configuration 1.34 ms (9)
+Dec 04 20:29:50 symfony [info] {sfWebDebugLogger} Factories 48.19 ms (1)
+Dec 04 20:29:50 symfony [info] {sfWebDebugLogger} Action "board/index" 53.44 ms (1)
+Dec 04 20:29:50 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.01 ms (3)
+Dec 04 20:29:50 symfony [info] {sfWebDebugLogger} View "Success" for "board/index" 20.00 ms (1)
+Dec 04 20:29:50 symfony [info] {sfWebResponse} Send content (43595 o)
+Dec 04 20:32:58 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'board',  'action' => 'index',)
+Dec 04 20:32:58 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Dec 04 20:32:58 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Dec 04 20:32:58 symfony [info] {boardActions} Call "boardActions->executeIndex()"
+Dec 04 20:32:58 symfony [info] {Doctrine_Connection_Mysql} exec : SET NAMES 'utf8' - ()
+Dec 04 20:32:58 symfony [info] {Doctrine_Connection_Mysql} query : SELECT p.id AS p__id, p.name AS p__name, p.description AS p__description, p.slug AS p__slug, p.created_at AS p__created_at, p.updated_at AS p__updated_at FROM phase p - ()
+Dec 04 20:32:58 symfony [info] {Doctrine_Connection_Mysql} query : SELECT t.id AS t__id, t.name AS t__name, t.description AS t__description, t.slug AS t__slug, t.task_color AS t__task_color, t.estimated_mins_to_complete AS t__estimated_mins_to_complete, t.actual_mins_to_complete AS t__actual_mins_to_complete, t.phase_id AS t__phase_id, t.department_id AS t__department_id, t.created_at AS t__created_at, t.updated_at AS t__updated_at FROM task t - ()
+Dec 04 20:32:58 symfony [info] {sfPHPView} Render "/Applications/MAMP/htdocs/kanban/sf_sandbox/apps/frontend/modules/board/templates/indexSuccess.php"
+Dec 04 20:32:58 symfony [info] {Doctrine_Connection_Statement} execute : SELECT t.id AS t__id, t.name AS t__name, t.description AS t__description, t.slug AS t__slug, t.task_color AS t__task_color, t.estimated_mins_to_complete AS t__estimated_mins_to_complete, t.actual_mins_to_complete AS t__actual_mins_to_complete, t.phase_id AS t__phase_id, t.department_id AS t__department_id, t.created_at AS t__created_at, t.updated_at AS t__updated_at FROM task t WHERE (t.phase_id IN (?)) - (1)
+Dec 04 20:32:58 symfony [info] {Doctrine_Connection_Statement} execute : SELECT d.id AS d__id, d.name AS d__name, d.description AS d__description, d.short_name AS d__short_name, d.task_color AS d__task_color, d.created_at AS d__created_at, d.updated_at AS d__updated_at FROM department d WHERE (d.id = ?) - (1)
+Dec 04 20:32:58 symfony [info] {Doctrine_Connection_Statement} execute : SELECT d.id AS d__id, d.name AS d__name, d.description AS d__description, d.short_name AS d__short_name, d.task_color AS d__task_color, d.created_at AS d__created_at, d.updated_at AS d__updated_at FROM department d WHERE (d.id = ?) - (2)
+Dec 04 20:32:58 symfony [info] {Doctrine_Connection_Statement} execute : SELECT t.id AS t__id, t.name AS t__name, t.description AS t__description, t.slug AS t__slug, t.task_color AS t__task_color, t.estimated_mins_to_complete AS t__estimated_mins_to_complete, t.actual_mins_to_complete AS t__actual_mins_to_complete, t.phase_id AS t__phase_id, t.department_id AS t__department_id, t.created_at AS t__created_at, t.updated_at AS t__updated_at FROM task t WHERE (t.phase_id IN (?)) - (2)
+Dec 04 20:32:58 symfony [info] {Doctrine_Connection_Statement} execute : SELECT d.id AS d__id, d.name AS d__name, d.description AS d__description, d.short_name AS d__short_name, d.task_color AS d__task_color, d.created_at AS d__created_at, d.updated_at AS d__updated_at FROM department d WHERE (d.id = ?) - (2)
+Dec 04 20:32:58 symfony [info] {Doctrine_Connection_Statement} execute : SELECT d.id AS d__id, d.name AS d__name, d.description AS d__description, d.short_name AS d__short_name, d.task_color AS d__task_color, d.created_at AS d__created_at, d.updated_at AS d__updated_at FROM department d WHERE (d.id = ?) - (3)
+Dec 04 20:32:58 symfony [info] {Doctrine_Connection_Statement} execute : SELECT t.id AS t__id, t.name AS t__name, t.description AS t__description, t.slug AS t__slug, t.task_color AS t__task_color, t.estimated_mins_to_complete AS t__estimated_mins_to_complete, t.actual_mins_to_complete AS t__actual_mins_to_complete, t.phase_id AS t__phase_id, t.department_id AS t__department_id, t.created_at AS t__created_at, t.updated_at AS t__updated_at FROM task t WHERE (t.phase_id IN (?)) - (3)
+Dec 04 20:32:58 symfony [info] {Doctrine_Connection_Statement} execute : SELECT d.id AS d__id, d.name AS d__name, d.description AS d__description, d.short_name AS d__short_name, d.task_color AS d__task_color, d.created_at AS d__created_at, d.updated_at AS d__updated_at FROM department d WHERE (d.id = ?) - (2)
+Dec 04 20:32:58 symfony [info] {Doctrine_Connection_Statement} execute : SELECT d.id AS d__id, d.name AS d__name, d.description AS d__description, d.short_name AS d__short_name, d.task_color AS d__task_color, d.created_at AS d__created_at, d.updated_at AS d__updated_at FROM department d WHERE (d.id = ?) - (1)
+Dec 04 20:32:58 symfony [info] {Doctrine_Connection_Statement} execute : SELECT d.id AS d__id, d.name AS d__name, d.description AS d__description, d.short_name AS d__short_name, d.task_color AS d__task_color, d.created_at AS d__created_at, d.updated_at AS d__updated_at FROM department d WHERE (d.id = ?) - (5)
+Dec 04 20:32:58 symfony [info] {Doctrine_Connection_Statement} execute : SELECT t.id AS t__id, t.name AS t__name, t.description AS t__description, t.slug AS t__slug, t.task_color AS t__task_color, t.estimated_mins_to_complete AS t__estimated_mins_to_complete, t.actual_mins_to_complete AS t__actual_mins_to_complete, t.phase_id AS t__phase_id, t.department_id AS t__department_id, t.created_at AS t__created_at, t.updated_at AS t__updated_at FROM task t WHERE (t.phase_id IN (?)) - (4)
+Dec 04 20:32:58 symfony [info] {Doctrine_Connection_Statement} execute : SELECT d.id AS d__id, d.name AS d__name, d.description AS d__description, d.short_name AS d__short_name, d.task_color AS d__task_color, d.created_at AS d__created_at, d.updated_at AS d__updated_at FROM department d WHERE (d.id = ?) - (1)
+Dec 04 20:32:58 symfony [info] {Doctrine_Connection_Statement} execute : SELECT t.id AS t__id, t.name AS t__name, t.description AS t__description, t.slug AS t__slug, t.task_color AS t__task_color, t.estimated_mins_to_complete AS t__estimated_mins_to_complete, t.actual_mins_to_complete AS t__actual_mins_to_complete, t.phase_id AS t__phase_id, t.department_id AS t__department_id, t.created_at AS t__created_at, t.updated_at AS t__updated_at FROM task t WHERE (t.phase_id IN (?)) - (5)
+Dec 04 20:32:58 symfony [info] {Doctrine_Connection_Statement} execute : SELECT d.id AS d__id, d.name AS d__name, d.description AS d__description, d.short_name AS d__short_name, d.task_color AS d__task_color, d.created_at AS d__created_at, d.updated_at AS d__updated_at FROM department d WHERE (d.id = ?) - (1)
+Dec 04 20:32:58 symfony [info] {sfPHPView} Decorate content with "/Applications/MAMP/htdocs/kanban/sf_sandbox/apps/frontend/templates/layout.php"
+Dec 04 20:32:58 symfony [info] {sfPHPView} Render "/Applications/MAMP/htdocs/kanban/sf_sandbox/apps/frontend/templates/layout.php"
+Dec 04 20:32:58 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Dec 04 20:32:58 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Dec 04 20:32:58 symfony [info] {sfWebDebugLogger} Configuration 1.27 ms (9)
+Dec 04 20:32:58 symfony [info] {sfWebDebugLogger} Factories 38.74 ms (1)
+Dec 04 20:32:58 symfony [info] {sfWebDebugLogger} Action "board/index" 50.52 ms (1)
+Dec 04 20:32:58 symfony [info] {sfWebDebugLogger} Database (Doctrine) 0.05 ms (17)
+Dec 04 20:32:58 symfony [info] {sfWebDebugLogger} View "Success" for "board/index" 150.61 ms (1)
+Dec 04 20:32:58 symfony [info] {sfWebResponse} Send content (74037 o)
